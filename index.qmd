@@ -1,0 +1,8 @@
+---
+title: How to make a 3D model
+author: Jascyn Bell
+format:
+  html:
+    embed-resources: true
+---
+
