@@ -6,6 +6,9 @@ format:
     theme: sketchy 
     embed-resources: true
 ---
+```{python}
+import numpy as np
+``` 
 
 ```
 # Make this into an image
