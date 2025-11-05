@@ -1,5 +1,5 @@
 ---
-title: How to make a 3D model
+title: Finding the Atomic mass of Caffeine & it's Formal Charges
 author: Jascyn Bell
 format:
   html:
@@ -7,18 +7,22 @@ format:
     embed-resources: true
 ---
 
-```{plotly}
-import plotly.graph_objects as go 
-import numpy as np 
-
-# Data to be plotted
-x = np.outer(np.linspace(-2, 2, 30), np.ones(30)) 
-y = x.copy().T 
-z = np.cos(x ** 2 + y ** 2) 
-
-# plotting the figure
-fig = go.Figure(data=[go.Surface(x=x, y=y, z=z)]) 
-
-fig.show()
 ```
+# Make this into an image
+(/image/https://thumbs.dreamstime.com/b/pouring-coffee-overflowed-white-porcelain-mug-saucer-cup-overflowing-full-wooden-table-stream-kettle-177864556.jpg)
+```
+
+
+For my Final Project, I decided to find the atomic mass of caffeine and the formal charges of it's individual atoms. 
+
+Finding the atomic mass of a molecule is easy! Because you're only adding the atomic masses of different atoms the molecule is composed of. 
+
+The formal charge of an atom is known as (the # of valence electrons) - (the # of lone pairs of electrons) - (# of bonds / 2) 
+
+```{python}
+
+# df: Caffeine = "C8 H10 N4 O2"
+#Define this better
+```
+
 
