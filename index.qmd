@@ -4,28 +4,29 @@ author: Jascyn Bell
 format:
   html:
     theme: sketchy 
+    css: styles.css
     embed-resources: true
----
-```{python}
-import numpy as np
-``` 
+    backgroundcolor: "#C4A484"
+--- 
 
-```
-# Make this into an image
-(/image/https://thumbs.dreamstime.com/b/pouring-coffee-overflowed-white-porcelain-mug-saucer-cup-overflowing-full-wooden-table-stream-kettle-177864556.jpg)
-```
-
+<img src="Coffie.png"
+style="width:500px;height:250px;">
 
 For my Final Project, I decided to find the atomic mass of caffeine and the formal charges of it's individual atoms. 
 
-Finding the atomic mass of a molecule is easy! Because you're only adding the atomic masses of different atoms the molecule is composed of. 
+Finding the atomic mass of a molecule is easy! Mainly because you're only adding the atomic masses of different atoms the molecule is composed of. 
 
-The formal charge of an atom is known as (the # of valence electrons) - (the # of lone pairs of electrons) - (# of bonds / 2) 
+# Here I'll be calculating atomic mass
 
 ```{python}
+import pandas as pd
 
-# df: Caffeine = "C8 H10 N4 O2"
-#Define this better
+# df =  
+
+# df.columns = ['Atom','Atomic Mass']
+
 ```
 
+# Here I'll be finding formal charge
 
+The formal charge of an atom is known as (the # of valence electrons) - (the # of lone pairs of electrons) - (# of bonds / 2)
