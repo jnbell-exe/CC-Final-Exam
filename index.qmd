@@ -1,7 +1,10 @@
 ---
-title: Finding the Atomic mass of Caffeine & it's Formal Charges
+title: Finding the Molar mass of Caffeine & its Formal Charges
 author: Jascyn Bell
 format:
+  pdf:
+    include-in-header:
+      text:\usepackage[version=4]{mhchem}
   html:
     theme: sketchy 
     css: styles.css
@@ -12,21 +15,109 @@ format:
 <img src="Coffie.png"
 style="width:500px;height:250px;">
 
-For my Final Project, I decided to find the atomic mass of caffeine and the formal charges of it's individual atoms. 
 
-Finding the atomic mass of a molecule is easy! Mainly because you're only adding the atomic masses of different atoms the molecule is composed of. 
+For my Final Project, I decided to find the molar mass of caffeine and the formal charges of the individual atoms which it is composed of. Furthermore, I will be employing pandas to create a table to display the atomic masses of the individual atoms in the molecular formula of caffeine. After defining the atomic masses, I will utilize sympy to create the equation for both formal charge and molecular formula. Lastly, I will recruit matplotlib to display a graph of my atomic charges. 
 
-# Here I'll be calculating atomic mass
+Finding the atomic mass of a molecule is easy! Mainly because you re only adding the atomic masses of different atoms the molecule is composed of. 
+ 
+
+$\ce{C8H10N4O2}$
+
+
+As you can clearly see, caffeine has 8 Carbons, 10 Hydrogens, 4 Nitrogens and 2 oxygens. 
+In order to display the chemical symbols and subscripts, I used a branch of LaTex called <u>**mchem**</u> 
+
+```
+include-in-header:
+      text:\usepackage[version=4]{mhchem}
+```
+
+In this case, I will be using pandas to show the atomic masses of the Hydrogen, Carbon, Nitrogen, and Oxygen atoms found in caffeine
+
 
 ```{python}
 import pandas as pd
 
-# df =  
+df = pd.read_csv("Caffeine Content - Sheet1 (1).csv") 
 
-# df.columns = ['Atom','Atomic Mass']
+df
 
 ```
 
-# Here I'll be finding formal charge
+In here, I plugged a data sheet link ~~Which I definitely did not create just now for this example~~ to be read by pandas and it procures a chart based on what was present in the sheet data. 
 
-The formal charge of an atom is known as (the # of valence electrons) - (the # of lone pairs of electrons) - (# of bonds / 2)
+
+```{python}
+import sympy as sy
+from sympy import symbols, latex
+
+Carbon = 12.011 * 8
+
+Hydrogen = 1.008 * 10
+
+Nitrogen = 14.007 * 4
+
+Oxygen = 15.999 *2
+
+sy.pprint(Carbon + Hydrogen + Nitrogen + Oxygen)
+
+```
+
+From using subsets of sympy, I calculated the molecular mass 
+
+# Finding formal charge
+
+The formal charge of an atom is known as:
+
+$$
+(The # of valence electrons) - (the # of lone pairs of electrons) - (# of bonds / 2)
+$$
+
+In order to make use out of this formula, we need the molecular structure for caffeine as well as the number of valence shells of each atom.
+
+<img src="CaffeineUpdated.svg">
+
+Getting this image from overleaf.com, I can find the number of bonds needed for the equations.
+
+|**Element**  |**Formal Charge** |
+| ----------|:-------------:|
+|Carbon     |(6-2)-0-(4/2) = 2 |
+|Hydrogen   |(1)-0-(2/2) = -1|
+|Nitrogen   |(7-2)-2-(6/2) = 1 |
+|Oxygen     |(8-6)-2-(4/2) = -2 |
+
+For my final portion of the project, I wanted to display the differences in formal charge through graphing. 
+
+```{python}
+import matplotlib.pyplot as plt
+import numpy as np
+
+Elements = ['Carbon', 'Hydrogen', 'Nitrogen', 'Oxygen']
+FormalCharge = [2, -1,1, -2]
+
+plt.bar(Elements, FormalCharge)
+plt.title('Caffeine Charge')
+plt.xlabel('Elements')
+plt.ylabel('FormalCharge')
+plt.show()
+
+```
+In conclusion, you can see that Carbon has the largest formal charge while oxygen has the lowest. 
+
+This graph was made possible with matplotlib!
+
+The ==plt== command made it possible for different features of matplotlib to be edited, and could only be displayed by the command ==plt.show==
+
+By using matplotlib for graphing data, LaTex for formatting equations, and Pandas for turning data into a table chart, I can use python to explain complex topics such as molecular structure and formal charge.
+
+Working on this final has been an experience,
+
+- I learned the nuances of packages (mhchem program within LaTex) 
+
+- How to create a website on github
+
+- Editing images and website formatting
+
+Goodnight.
+
+
